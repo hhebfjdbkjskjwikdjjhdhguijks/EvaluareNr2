@@ -1,0 +1,19 @@
+﻿@model List<Butuc.Models.Book>
+
+<h1>Books</h1>
+<a asp-action="Create" class="btn btn-primary">Adaugă o carte nouă</a>
+
+<div class="book-list">
+    @foreach (var book in Model)
+    {
+        <div class="book-item">
+            <img src="@book.ImageUrl" alt="@book.Title" class="book-image" />
+            <h3>@book.Title</h3>
+            <p>Autor: @book.Author</p>
+            <p>Preț: @book.Price lei</p>
+
+            <a asp-action="Edit" asp-route-id="@book.ID" class="btn btn-warning">Editează</a>
+            <a asp-action="Delete" asp-route-id="@book.ID" class="btn btn-danger">Șterge</a>
+        </div>
+    }
+</div>

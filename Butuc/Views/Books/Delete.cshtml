@@ -1,0 +1,17 @@
+﻿@model Butuc.Models.Book
+
+<h2>Șterge cartea</h2>
+<h3>Ești sigur că vrei să ștergi această carte?</h3>
+
+<div>
+    <h4>@Model.Title</h4>
+    <p>Autor: @Model.Author</p>
+    <p>Preț: @Model.Price lei</p>
+    <p><img src="@Model.ImageUrl" alt="@Model.Title" class="book-image" /></p>
+</div>
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" asp-for="ID" />
+    <button type="submit" class="btn btn-danger">Șterge</button>
+    <a asp-action="Index" class="btn btn-secondary">Anulează</a>
+</form>
